@@ -1,0 +1,16 @@
+.link {
+  user-select: none;
+  font-style: "HelveticalNeue";
+  color: #3366bb;
+  cursor: pointer;
+
+  &:hover {
+    color: #0645ad;
+    transform: scale(1.02);
+    text-decoration: underline;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

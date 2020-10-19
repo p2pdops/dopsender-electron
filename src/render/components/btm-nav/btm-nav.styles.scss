@@ -1,0 +1,119 @@
+.btm-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0.1rem -0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+
+  .btm-nav-connected {
+    background-color: #2196f3;
+    .controls-lay {
+      .btns-lay {
+        background-color: #2196f3;
+        width: 100%;
+        border-radius: 0;
+      }
+      button {
+        border-radius: 0;
+        color: white;
+        width: 51%;
+        font-weight: bold;
+        padding: 0.65rem 2px;
+        &.disconnect:hover {
+          //
+          background-color: rgba(#ef5350, 0.9);
+          // border-bottom-left-radius: 0;
+        }
+        &.select-files:hover {
+          background-color: rgba(#66bb6a, 0.9);
+        }
+      }
+    }
+
+    .flex-lay {
+      color: white;
+      font-weight: 800;
+      padding: 0.5rem 1rem;
+
+      .text-lay {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .flipsV {
+          animation: flipV 3s 5s infinite;
+        }
+
+        .fileName {
+          margin-right: 1rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .flipsH {
+          text-align: right;
+          width: 10rem;
+          animation: flipH 3s 5s infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes flipV {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: rotateY(360deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotateY(0deg);
+  }
+
+  75% {
+    transform: rotateX(-360deg) scale(1);
+  }
+
+  100% {
+    // transform: scale(1.1) rotateX(0deg);
+  }
+}
+
+@keyframes flipH {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: rotateY(-360deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotateY(0deg);
+  }
+
+  75% {
+    transform: rotateX(-360deg) scale(1);
+  }
+
+  100% {
+    // transform: scale(1.1) rotateX(0deg);
+  }
+}
+
+/* Respect user preferences about animations */
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    white-space: normal;
+  }
+  .marquee span {
+    animation-iteration-count: 1;
+    animation-duration: 0.01;
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,21 @@
+.row {
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+
+  .col {
+    display: block;
+    width: 50% !important;
+    height: auto;
+  }
+
+  .full {
+    display: block;
+    width: 100% !important;
+    height: auto;
+  }
+}
+
+.main {
+  background-color: #2196f3;
+} 

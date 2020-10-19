@@ -1,0 +1,78 @@
+.text-container {
+  display: flex;
+  flex-direction: column;
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.waiting {
+  button {
+    background-color: #1e88e5;
+    color: white;
+  }
+}
+
+.fileName {
+  margin-right: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploading {
+  animation-name: upload;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+
+  button {
+    color: white;
+    background-color: #dd2c00;
+  }
+}
+
+.downloading {
+  animation-name: download;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+
+  button {
+    background-color: #c51162;
+    color: white;
+  }
+}
+
+.done {
+  button {
+    background-color: #00c853;
+    color: white;
+  }
+}
+
+@keyframes upload {
+  0% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+}
+
+@keyframes download {
+  0% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+}

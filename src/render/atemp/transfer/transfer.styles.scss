@@ -1,0 +1,38 @@
+.transfer-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .drag-drop,
+  .transfer-list {
+    position: absolute;
+    width: 100%;
+  }
+
+  .btm-menu {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .transfer-list {
+    height: 100vh; //calc(100vh - 36px);
+    overflow-y: scroll;
+    margin: 0 1rem 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .drag-drop {
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: blue;
+  }
+}
+
+.full-btn {
+  width: 100% !important;
+}
