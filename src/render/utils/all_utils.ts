@@ -15,8 +15,9 @@ const getIp: () => Promise<string> = () =>
     //     ip = sub_interface.address;
     //   }
     // }
-    network.get_private_ip((ip: string) => {
+    network.get_private_ip((err: any, ip: string) => {
       console.log("Get IP:", ip);
+      if (err) return reject(err);
       resolve(ip);
     });
   });
