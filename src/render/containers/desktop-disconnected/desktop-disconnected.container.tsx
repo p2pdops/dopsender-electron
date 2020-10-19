@@ -100,7 +100,7 @@ interface Props extends StateProps {
 const _DesktopDisconnected = ({ myIp, connectDesktop }: Props) => {
   console.log(myIp);
 
-  const [ip, setIp] = useState("");
+  const [remoteIP, setIp] = useState("");
 
   return (
     <div className={"mobile-disconnected"}>
@@ -115,10 +115,15 @@ const _DesktopDisconnected = ({ myIp, connectDesktop }: Props) => {
               <br />
               <b>Enter IP address below :</b>
             </p>
-            <IpInp ipChange={setIp} />
+            <IpInp
+              ipChange={(ip) => {
+                console.log(ip)
+                setIp(ip);
+              }}
+            />
             <ColorButton
               onClick={() => {
-                connectDesktop(ip);
+                connectDesktop(remoteIP);
               }}
             >
               Connect
