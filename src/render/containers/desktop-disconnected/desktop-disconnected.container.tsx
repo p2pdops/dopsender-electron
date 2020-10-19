@@ -37,7 +37,6 @@ const IpInp = ({ ipChange }: { ipChange: (ip: string) => void }) => {
 
   return (
     <div className={"ip"}>
-      <input type="text" name="name" pattern="[0-9]" title="Title" />
       <input
         className={"ip-part"}
         onChange={(event) => change(1, event.target.value)}
