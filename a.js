@@ -1,37 +1,37 @@
 var evilscan = require("evilscan");
 var network = require("network");
 
-network.get_active_interface((err, data) => {
-  console.log(data);
+// network.get_active_interface((err, data) => {
+//   console.log(data);
 
-  const ip_sp = data.ip_address.split(".");
-  ip_sp.pop();
+//   const ip_sp = data.ip_address.split(".");
+//   ip_sp.pop();
 
-  var options = {
-    target: `${ip_sp.join(".")}.0/24`,
-    port: "80",
-    status: "RO", // Timeout, Refused, Open, Unreachable
-    banner: true,
-  };
+//   var options = {
+//     target: `${ip_sp.join(".")}.0/24`,
+//     port: "80",
+//     status: "RO", // Timeout, Refused, Open, Unreachable
+//     banner: true,
+//   };
 
-  var scanner = new evilscan(options);
+//   var scanner = new evilscan(options);
 
-  scanner.on("result", function (data) {
-    // fired when item is matching options
-    
-    console.log(data);
-  });
+//   scanner.on("result", function (data) {
+//     // fired when item is matching options
 
-  scanner.on("error", function (err) {
-    throw new Error(err.toString());
-  });
+//     console.log(data);
+//   });
 
-  scanner.on("done", function () {
-    // finished !
-  });
+//   scanner.on("error", function (err) {
+//     throw new Error(err.toString());
+//   });
 
-  scanner.run();
-});
+//   scanner.on("done", function () {
+//     // finished !
+//   });
+
+//   scanner.run();
+// });
 
 // ACTIVE NETWORK
 // const data = {
@@ -42,3 +42,5 @@ network.get_active_interface((err, data) => {
 //   netmask: "255.255.255.0",
 //   type: "Wired",
 // };
+
+network.get_private_ip(console.log);
