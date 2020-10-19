@@ -8,11 +8,6 @@ import { connectToRemoteSocketServer } from "../../redux/network/network.reducer
 import { Button, Theme, withStyles } from "@material-ui/core";
 import "./desktop-disconnected.styles.scss";
 
-interface Props {
-  myIp: string;
-  connectDesktop: (ip: string) => void;
-}
-
 const IpInp = ({ ipChange }: { ipChange: (ip: string) => void }) => {
   const [p1, setP1] = useState("");
   const [p2, setP2] = useState("");
@@ -95,6 +90,14 @@ const ColorButton = withStyles((theme: Theme) => ({
   },
 }))(Button);
 
+interface StateProps {
+  myIp: string;
+}
+
+interface Props extends StateProps {
+  connectDesktop: (ip: string) => void;
+}
+
 const _DesktopDisconnected = ({ myIp, connectDesktop }: Props) => {
   console.log(myIp);
 
@@ -146,7 +149,7 @@ const _DesktopDisconnected = ({ myIp, connectDesktop }: Props) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector<null, Props>({
+const mapStateToProps = createStructuredSelector<null, StateProps>({
   myIp: selectMyIP,
 });
 
