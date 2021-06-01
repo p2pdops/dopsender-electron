@@ -1,4 +1,4 @@
-Dopsender Desktop : Share Files through Wifi direct
+Dopsender Desktop : Share Files through Wifi Netowrk
 
 Built using [Electron.js](https://www.electronjs.org/)
 
