@@ -24,7 +24,7 @@ Limitless number of files with huge file size can be sent within seconds.
 
 Dopsender tranfers data in background so no worry of interruptions.
 
-### [Check out DopsenderAndroid](https://github.com/p2pdops/DopsenderAndroid)
+### [Check out Dopsender : Android Project ](https://github.com/p2pdops/DopsenderAndroid)
 
 
 <hr/>
